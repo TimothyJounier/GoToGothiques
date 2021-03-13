@@ -1,0 +1,498 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: white;
+    font-family: "Playfair Display", serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/****************** Contenu ****************/
+.container,
+.container-contact,
+.container-admins,
+.container-accueil,
+.container-registrer,
+.container-registrer,
+.container-registrer,
+.container-user {
+    flex:  1 0 auto;
+}
+
+/****************** NAVBAR *****************/
+
+.nav {
+    background-color: #f8002f;
+    background-image: linear-gradient(326deg, #f8002f 0%, #000c14 74%);
+    text-align: center;
+    width: 100%;
+}
+
+/********************** Footer ***********************/
+
+.page-footer {
+    flex-shrink: 0;
+    width: 100%;
+    background-image: linear-gradient(326deg, #f8002f 0%, #000c14 74%);
+}
+
+h6,
+a {
+    text-decoration: none;
+    color: #989092;
+}
+
+h6,
+a:hover {
+    color: rgba(255, 255, 255, .75);
+    text-decoration: none;
+}
+
+.footer-copyright {
+    color: white;
+}
+
+.bloc1 {
+    width: 100%;
+}
+
+/************************* Page d'Accueil **********************/
+
+
+
+body {
+  background: #fff;
+  margin: 0;
+  color: #5a5a5a;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display", serif;
+  font-weight: 300;
+}
+
+p {
+  padding: 0;
+  margin-bottom: 12px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 26px;
+  color: #666;
+  margin-top: 10px;
+}
+
+html, body {
+  height: 100%;
+}
+
+.alignleft {
+  float: left;
+}
+
+.alignright {
+  float: right;
+}
+
+.aligncenter {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  clear: both;
+}
+
+.centered {
+  text-align: center
+}
+
+.mt {
+  margin-top: 50px;
+}
+
+.mb {
+  margin-bottom: 50px;
+}
+
+.mtb {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.mtb2 {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.ptb {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+@media (max-width: 768px) {
+  .ptb img {
+    max-width: 100%;
+  }
+}
+
+.clear {
+  clear: both;
+  display: block;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  width: 100%;
+}
+
+::-moz-selection {
+  color: #fff;
+  text-shadow: none;
+  background: #2B2E31;
+}
+
+::selection {
+  color: #fff;
+  text-shadow: none;
+  background: #2B2E31;
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+a:hover, a:focus {
+  text-decoration: none;
+  color: #696E74;
+}
+
+.nopadding {
+  padding: 0px !important;
+  margin: 0px;
+}
+
+
+
+/*Buttons Configuration */
+
+.btn-conf {
+  border-radius: 50px;
+  margin-right: 15px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 13px 28px 12px 28px;
+  margin-top: 20px;
+}
+
+.btn-blue {
+  background-image: linear-gradient(326deg, #f8002f 0%, #000c14 74%);
+  color: white
+}
+
+/* HEADER SECTION */
+
+#h {
+  background: url(/assets/img/background/image-fond-9.jpg) no-repeat center top;
+  padding-top: 150px;
+  text-align: center;
+  background-attachment: relative;
+  background-position: center center;
+  min-height: 700px;
+  width: 100%;
+  color: red;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.text-img {
+  margin-right: 800px;
+}
+
+#h h1 {
+  font-weight: 900;
+  font-size: 60px;
+  letter-spacing: 1px;
+}
+
+#h h2 {
+  font-size: 38px;
+}
+
+#h h5 {
+  font-weight: 400;
+  letter-spacing: 0.8px;
+  margin-bottom: 25px;
+}
+
+/* COUNTDOWN CONFIGURATION */
+
+.countdown-divider {
+  padding: 144px 0px;
+}
+
+.countdown-divider img {
+  max-width: 300px;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.countdown-header h1 {
+  margin-bottom: 0px;
+}
+
+.countdown-header:before {
+  opacity: 0.8 !important;
+}
+
+.countdown-header .uppercase {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+@media all and (max-width: 768px) {
+  .countdown-header img {
+    max-width: 150px;
+  }
+}
+
+.countdown {
+  text-align: center;
+  margin-top: 72px;
+}
+
+.countdown-row {
+  color: #fff;
+  font-size: 80px;
+  font-weight: 300;
+}
+
+.countdown-section {
+  width: 25%;
+  display: inline-block;
+}
+
+.countdown-amount {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.countdown-period {
+  display: block;
+  font-size: 24px;
+}
+
+@media all and (max-width: 767px) {
+  .countdown {
+    margin-top: 48px;
+  }
+  .countdown-row {
+    font-size: 36px;
+  }
+  .countdown-period {
+    font-size: 16px;
+  }
+}
+
+/************************* Page Inscription et Connexion **********************/
+
+
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400");
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display");
+ .message, .form, form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+
+.container-registrer {
+  width: 700px;
+  height: 400px;
+  background: white;
+  position: relative;
+  justify-content: center;
+  display: grid;
+  grid-template: 100%/50% 50%;
+  box-shadow: 2px 2px 10px 0 rgba(51, 51, 51, 0.2);
+}
+
+.message {
+  position: absolute;
+  background: white;
+  width: 50%;
+  height: 100%;
+  transition: 0.5s all ease;
+  transform: translateX(100%);
+  z-index: 4;
+}
+.message:before {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 70%;
+  background: #C3C3D8;
+  opacity: 0;
+  left: 0;
+  top: 15%;
+}
+.message .button {
+  margin: 5px 0;
+}
+
+.signup:before {
+  opacity: 0.3;
+  left: 0;
+}
+
+.login:before {
+  opacity: 0.3;
+  left: 100%;
+}
+
+.btn-wrapper {
+  width: 60%;
+}
+
+.form {
+  width: 100%;
+  height: 100%;
+}
+.form--heading {
+  font-size: 18px;
+  height: 50px;
+  color: black;
+  font-family: "Playfair Display", serif;
+}
+
+form {
+  width: 100%;
+}
+form > * {
+  margin: 10px;
+}
+form input {
+  width: 90%;
+  border: 0;
+  border-bottom: 1px solid rgba(195, 195, 216, 0.5);
+  font-size: 13px;
+  font-weight: 300;
+  color: black;
+  letter-spacing: 0.11em;
+}
+form input::placeholder {
+  color: #C3C3D8;
+  font-size: 10px;
+}
+form input:focus {
+  outline: 0;
+  border-bottom: 1px solid red;
+  transition: 0.6s all ease;
+}
+
+.button {
+  width: 100%;
+  height: 30px;
+  border: 0;
+  outline: 0;
+  color: white;
+  font-size: 15px;
+  font-weight: 300;
+  position: relative;
+  z-index: 3;
+  letter-spacing: 2px;
+  background-image: linear-gradient(326deg, #f8002f 0%, #000c14 74%);
+  font-family: "Playfair Display", serif;
+  cursor: pointer;
+}
+
+@media (max-width: 750px) {
+  .container {
+    transform: scale(0.8);
+  }
+}
+ 
+
+/************************* Page Contact **********************/
+
+.contact{
+  margin-top: 140px;
+  height: 400px;
+}
+.col-md-3{
+  background: #f8002f;
+  padding: 4%;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  font-family: "Playfair Display", serif;
+}
+.contact-info{
+  margin-top:10%;
+}
+.contact-info img{
+  margin-bottom: 15%;
+}
+.contact-info h2{
+  margin-bottom: 10%;
+  font-family: "Playfair Display", serif;
+  color: #000c14;
+}
+.contact-info h4{
+  color: #000c14;
+}
+.col-md-9{
+  background: #fff;
+  padding: 3%;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+.contact-form label{
+  font-weight:600;
+}
+.contact-form button{
+  font-family: "Playfair Display", serif;
+  background-image: linear-gradient(326deg, #f8002f 0%, #000c14 74%);
+  color: #fff;
+  font-weight: 600;
+  width: 25%;
+}
+.contact-form button:focus{
+  box-shadow:none;
+}
+
+/************************* Page Réglages **********************/
+
+/* Css dans le html directement pour la page réglage */ 
+
+/************************* Page Admin **********************/
+.img-admins {
+  width: 700px;
+  height: 400px;
+  border-radius: 6px;
+}
+
+.container-admins {
+  margin-top: 60px;
+}
+.container-admins h5 p a {
+  font-family: "Playfair Display", serif;
+}
