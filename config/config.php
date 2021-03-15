@@ -15,6 +15,7 @@ $displayMsg = array(
     '5' => ['type' => 'alert-danger', 'msg' => 'Le patient n\'a pas été mis à jour'],
     '6' => ['type' => 'alert-success', 'msg' => 'Le rdv a bien été mis à jour'],
     '7' => ['type' => 'alert-danger', 'msg' => 'Le rdv n\'a pas été mis à jour'],
+    '8' => ['type' => 'alert-success', 'msg' => 'L\'utilisateur a bien été connecté'],
     '23000' => ['type' => 'alert-danger', 'msg' => 'Le mail est déjà existant'],
     
 );

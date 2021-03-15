@@ -14,7 +14,13 @@ $errorsArray = array();
 //On ne controle que s'il y a des données envoyées 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-    // PSEUDO
+    // variable registrer nettoyer 
+    $registrer = trim(filter_input(INPUT_POST, 'registrerAndConnexion', FILTER_SANITIZE_STRING));
+
+    // On test si on est sur le form registrer
+    if($registrer == 'registrer'){
+
+         // PSEUDO
      // On verifie l'existance et on nettoie
      $pseudo = trim(filter_input(INPUT_POST, 'pseudo', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES));
     
@@ -72,18 +78,47 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
  // Si il n'y a pas d'erreurs, on enregistre un nouveau utilisateur.
+ if(empty($errorsArray)){
+    $user = new User();
+    $user->setPseudo($pseudo);
+    $user->setMail($email);
+    $user->setPassword($password);
+    $resultCreatedUser = $user->create();
+    if($resultCreatedUser===false){
+        $errorsArray['register_error'] = 'Enregistrement impossible (le mail existe déjà ?)';
+    }
+    if(empty($errorsArray)){
+        // Mail d'envoi de vérification du compte
+        // mail();
+        // Ici on authentifie directement l'utilisateur enregistré
+        $_SESSION['id'] = $resultCreatedUser;
+        $_SESSION['id_roles'] = 1;
+        header('location: /controllers/homeCtrl.php?msgCode=8');
+    }
+}
 
- $user = new User($pseudo, $email, $password);
- if(empty($errorsArray) ){
-     $result = $user->create();
-     if($result!=false){
-        $_SESSION['id'] = $result;
-         header('location: /controllers/homeCtrl.php?msgCode=1');
-     } else {
-         // Si l'enregistrement s'est mal passé, on affiche à nouveau le formulaire de création avec un message d'erreur.
-         $msgCode = $result;
-     }
- }
+    } 
+
+    // On test si on est sur le form login
+    if($registrer == 'login'){
+
+        $email = trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL));
+
+    if(!empty($_POST['password']) && !empty($email)){
+
+        $password = $_POST['password'];
+        $user = new User();
+        $user = $user->getUserLogin($email, $password);
+        if($user){
+            $_SESSION['id'] = $user->id;
+            $_SESSION['id_roles'] = $user->id_roles;
+            header('location: /controllers/homeCtrl.php?msgCode=8');
+        } else {
+            $errorsArray['login_error'] = 'Votre login ou mot de passe n\'est pas reconnu';
+        }
+        }
+    }
+    
     
 }     
 

@@ -15,5 +15,5 @@ $id = intval(trim(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT)));
 $code = intval(User::delete($id));
 
 // On redirige vers la page du profil du User avec un code pour le message
-header('location: /controllers/list-usersCtrl.php?msgCode='.$code);
+header('location: /controllers/list-usersCtrl.php');
 /*************************************************************/

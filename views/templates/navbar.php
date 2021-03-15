@@ -17,7 +17,11 @@
           <a class="nav-link" href="/controllers/userContactCtrl.php">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/controllers/adminsCtrl.php">Admins</a>
+          <?php 
+          if(isset($_SESSION['id']) && $_SESSION['id_roles'] == 2){
+            echo '<a class="nav-link" href="/controllers/adminsCtrl.php">Admins</a>';
+          }
+        ?>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto nav-flex-icons">

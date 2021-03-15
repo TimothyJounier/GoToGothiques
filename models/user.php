@@ -9,27 +9,29 @@ class User{
     private $_password;
     private $_pdo;
 
-    /**
-     * Méthode magique qui permet d'hydrater notre objet 'user'
-     * 
-     * @return boolean
-     */
-    public function __construct($pseudo=NULL,$email=NULL,$password=NULL){
-        
-        // Hydratation de l'objet contenant la connexion à la BDD
-        $this->_pseudo = $pseudo;
-        $this->_email = $email;
-        $password_hash = password_hash($password, PASSWORD_DEFAULT);
-        $this->_password = $password_hash;
+    // Méthode magique construct, appellée auto à l'instanciation de la classe 
+    public function __construct(){
         $this->_pdo = Database::getInstance();
     }
 
+    public function setPseudo($pseudo){
+        $this->_pseudo = $pseudo;
+    }
+
+    public function setMail($email){
+        $this->_email = $email;
+    }
+
+    public function setPassword($password){
+        $password_hash = password_hash($password, PASSWORD_DEFAULT);
+        $this->_password = $password_hash;
+    }
 
     /**
      * Méthode magique qui permet d'hydrater notre objet 'patient' */
     public function getUserLogin($email, $password){
 
-        $sql = "SELECT *  FROM `users` WHERE `email` = :email ;";
+        $sql = "SELECT *  FROM `user` WHERE `email` = :email ;";
         $stmt = $this->_pdo->prepare($sql);
 
         // association des paramètres  

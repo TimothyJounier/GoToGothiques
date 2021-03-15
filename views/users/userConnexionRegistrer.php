@@ -23,6 +23,7 @@ if(!empty($msgCode) || $msgCode = trim(filter_input(INPUT_GET, 'msgCode', FILTER
 
       <form method="POST">
       <!-- Pseudo -->
+        <input  name="registrerAndConnexion" type="hidden" value="registrer">
         <input type="text" value="<?= $pseudo?? '' ?>" placeholder="Pseudo" id="pseudo" required name="pseudo" pattern="[A-Za-z-éèêëàâäôöûüç' ]+">
         <div class="valid-feedback">Parfait!</div>
         <div class="invalid-feedback">Merci de choisir un nom valide.</div>
@@ -50,6 +51,7 @@ if(!empty($msgCode) || $msgCode = trim(filter_input(INPUT_GET, 'msgCode', FILTER
           <?=$errorsArray['login_error'] ?? ''; ?>
         </div>
       <form method="POST">
+      <input  name="registrerAndConnexion" type="hidden" value="login">
         <input type="email" required placeholder="Email" name="email">
         <input type="password" id="password" required placeholder="Password" name="password">
         <button class="button" type="submit">Connexion</button>

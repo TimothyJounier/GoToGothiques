@@ -39,7 +39,8 @@ if(!empty($msgCode) || $msgCode = trim(filter_input(INPUT_GET, 'msgCode', FILTER
         <td><?=htmlentities($user->email)?></td>
         <td>
           <a href="/controllers/display-usersCtrl.php?id=<?=htmlentities($user->id)?>"><i class="far fa-edit"></i></a>
-          <a href="/controllers/delete-patientCtrl.php?id=<?=htmlentities($user->id)?>"><i class="fas fa-trash-alt"></i></a>
+          <a href="/controllers/delete-usersCtrl.php?id=<?=htmlentities($user->id)?>"><i class="fas fa-folder-minus"></i></a>
+          <a href="/controllers/delete-usersCtrl.php?id=<?=htmlentities($user->id)?>"><i class="fas fa-trash-alt"></i></a>
         </td>
         </tr>
     <?php } ?>
