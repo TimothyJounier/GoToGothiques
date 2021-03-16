@@ -1,12 +1,3 @@
-<!-- Affichage d'un message d'erreur personnalisé -->
-<?php 
-if(!empty($msgCode) || $msgCode = trim(filter_input(INPUT_GET, 'msgCode', FILTER_SANITIZE_STRING))) {
-    if(!array_key_exists($msgCode, $displayMsg)){
-        $msgCode = 0;
-    }
-    echo '<div class="alert '.$displayMsg[$msgCode]['type'].'">'.$displayMsg[$msgCode]['msg'].'</div>';
-} ?>
-<!-- -------------------------------------------- -->
 <div class="container-user">
         <div class="col-12 col-lg-auto mb-3">
 <form action="" method="GET">
@@ -27,23 +18,19 @@ if(!empty($msgCode) || $msgCode = trim(filter_input(INPUT_GET, 'msgCode', FILTER
     </tr>
   </thead>
   <tbody>
+
     <?php 
     $i=0;
     foreach($allUsers as $user) {
-      if($user->deleted_at == NULL){
-        $backgroundUser = 'backgroundUser';
-      } else {
-        $backgroundUser = 'backgroundSuspendUser';
-      }
         $i++;
         ?>
-        <tr class="<?= $backgroundUser ?>">
+        <tr>
         <th scope="row"><?=htmlentities($user->id)?></th>
         <td><?=htmlentities($user->pseudo)?></td>
         <td><?=htmlentities($user->email)?></td>
         <td>
           <a href="/controllers/display-usersCtrl.php?id=<?=htmlentities($user->id)?>"><i class="far fa-edit"></i></a>
-          <a href="/controllers/achievementCtrl.php?id=<?=htmlentities($user->id)?>"><i class="fas fa-folder-minus"></i></a>
+          <a href="/controllers/delete-usersCtrl.php?id=<?=htmlentities($user->id)?>"><i class="fas fa-folder-minus"></i></a>
           <a href="/controllers/delete-usersCtrl.php?id=<?=htmlentities($user->id)?>"><i class="fas fa-trash-alt"></i></a>
         </td>
         </tr>

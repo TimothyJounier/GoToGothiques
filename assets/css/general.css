@@ -50,7 +50,7 @@ a {
 
 h6,
 a:hover {
-    color: rgba(255, 255, 255, .75);
+    color: red!important;
     text-decoration: none;
 }
 
@@ -495,4 +495,14 @@ form input:focus {
 }
 .container-admins h5 p a {
   font-family: "Playfair Display", serif;
+}
+
+/********************** Page recherche utilisateur **********/
+
+.backgroundUser {
+  background-color: white;
+}
+
+.backgroundSuspendUser {
+  background-color: #e4e3de;
 }

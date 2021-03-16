@@ -50,21 +50,25 @@ class User{
 
 
     /**
-     * Méthode qui permet de créer un patient
+     * Méthode qui permet de créer un utilisateur
      * 
      * @return boolean
      */
     public function create(){
 
         try{
+            // Création de la requête SQL de création d'un utilisateur
             $sql = 'INSERT INTO `user` (`pseudo`,`email`, `password`) 
-                    VALUES (:pseudo, :email, :password);';
+                    VALUES (:pseudo, :email, :password );';
+            // Création de la requête préparée avec prepare() pour se protéger des injections SQL
             $sth = $this->_pdo->prepare($sql);
 
+            // Association d'une valeur à un paramètre via bindValue.
             $sth->bindValue(':pseudo',$this->_pseudo,PDO::PARAM_STR);
             $sth->bindValue(':email',$this->_email,PDO::PARAM_STR);
             $sth->bindValue(':password',$this->_password,PDO::PARAM_STR);
             if($sth->execute()){
+                //retourne le résultat de la méthode
                 return $this->_pdo->lastInsertId();
             } else {
                 return false;
@@ -139,7 +143,7 @@ class User{
     }
 
      /**
-     * Méthode qui permet de mettre à jour un patient
+     * Méthode qui permet de mettre à jour un utilisateur
      * 
      * @return boolean
      */
@@ -165,7 +169,7 @@ class User{
     }
 
     /**
-     * Méthode qui permet de supprimer un patient
+     * Méthode qui permet de supprimer un utilisateur
      * 
      * @return boolean
      */
@@ -189,6 +193,53 @@ class User{
         }
 
     }
+
+     /**
+     * Méthode qui permet d'archivé un utilisateur
+     * 
+     * @return boolean
+     */
+    public static function suspendUser($id){
+
+        $pdo = Database::getInstance();
+
+        try{
+            $sql = 'UPDATE `user` 
+                    SET `deleted_at` = NOW()
+                        WHERE `id` = :id;';
+            $sth = $pdo->prepare($sql);
+            $sth->bindValue(':id',$id,PDO::PARAM_INT);
+            $sth->execute();
+        }
+        catch(PDOException $e){
+            return $e->getCode();
+        }
+
+    }
+
+    /**
+     * Méthode qui permet de réactivé un utilisateur
+     * 
+     * @return boolean
+     */
+    public static function reactiveUser($id){
+
+        $pdo = Database::getInstance();
+
+        try{
+            $sql = 'UPDATE `user` 
+                    SET `updated_at` = NOW()
+                        WHERE `id` = :id;';
+            $sth = $pdo->prepare($sql);
+            $sth->bindValue(':id',$id,PDO::PARAM_INT);
+            $sth->execute();
+        }
+        catch(PDOException $e){
+            return $e->getCode();
+        }
+
+    }
+
 
     /**
      * Méthode qui permet de compter les patients
