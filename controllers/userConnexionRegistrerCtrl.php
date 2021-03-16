@@ -95,6 +95,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $_SESSION['id_roles'] = 1;
         header('location: /controllers/homeCtrl.php?msgCode=8');
     }
+    
 }
 
     } 
@@ -109,7 +110,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $password = $_POST['password'];
         $user = new User();
         $user = $user->getUserLogin($email, $password);
-        if($user){
+        if($user && $user->deleted_at == NULL){
             $_SESSION['id'] = $user->id;
             $_SESSION['id_roles'] = $user->id_roles;
             header('location: /controllers/homeCtrl.php?msgCode=8');

@@ -21,7 +21,8 @@ body {
 .container-registrer,
 .container-registrer,
 .container-registrer,
-.container-user {
+.container-user,
+.container-event {
     flex:  1 0 auto;
 }
 
@@ -435,7 +436,7 @@ form input:focus {
 /************************* Page Contact **********************/
 
 .contact{
-  margin-top: 140px;
+  margin-top: 100px;
   height: 400px;
 }
 .col-md-3{
@@ -470,7 +471,6 @@ form input:focus {
 }
 .contact-form button{
   font-family: "Playfair Display", serif;
-  background-image: linear-gradient(326deg, #f8002f 0%, #000c14 74%);
   color: #fff;
   font-weight: 600;
   width: 25%;
@@ -506,3 +506,28 @@ form input:focus {
 .backgroundSuspendUser {
   background-color: #e4e3de;
 }
+
+/********************** Page création d'évènements **********/
+
+.ctn-event {
+  margin-bottom: 20px;
+}
+
+.btn1 {
+  margin-top: 15px;
+  width: 100%;
+  height: 30px;
+  border: 0;
+  outline: 0;
+  color: white;
+  font-size: 15px;
+  font-weight: 300;
+  position: relative;
+  z-index: 3;
+  letter-spacing: 2px;
+  font-family: "Playfair Display", serif;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.

@@ -6,7 +6,8 @@
         <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit.<br>
            Doloremque soluta assumenda laborum eligendi atque aut vel sunt,<br> est illo, facilis, odit aliquam magni deleniti beatae. Quasi sint eos nostrum. Totam!.</p>
         <a href="/controllers/list-usersCtrl.php" class="btn btn-danger">Gestion Utilisateurs</a>
-        <a href="#" class="btn btn-danger">Gestion Évènements</a>
+        <a href="/controllers/add-eventCtrl.php" class="btn btn-danger">Ajout Évènements</a>
+        <a href="/controllers/list-eventCtrl.php" class="btn btn-danger">Liste Évènements</a>
       </div>
     </div>
 </div>
