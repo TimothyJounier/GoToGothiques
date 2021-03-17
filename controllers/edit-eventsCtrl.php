@@ -16,8 +16,6 @@ $errorsArray = array();
 $id = intval(trim(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT)));
 /*************************************************************/
 
-$errorsArray = array();
-
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
      // TITLE
@@ -25,7 +23,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
      $title = trim(filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING,FILTER_FLAG_NO_ENCODE_QUOTES));
 
      //On test si le champ n'est pas vide
-     var_dump($errorsArray);
      if(empty($title)){
          // On test la valeur
          $errorsArray['pseudo_error'] = 'Le champ n\'est pas rempli';
@@ -89,12 +86,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 // ***************************************************************
     // ***************************************************************
 
-    // Si il n'y a pas d'erreurs, on met à jour le patient.
-    if(empty($errorsArray) ){    
-        $patient = new Event($title, $date, $description);
-        $result = $event->update($id);
-        if($result===true){
-            header('location: /controllers/list-eventCtrl.php?msgCode=2');
+    // Si il n'y a pas d'erreurs, on met à jour l'event.
+    if(empty($errorsArray)){    
+        $event = new Event();
+        $event->setTitle($title);
+        $event->setDate($date);
+        $event->setDescription($description);
+        $resultUpdatedEvent = $event->update($id);
+        if($resultUpdatedEvent ===true){
+            header('location: /controllers/list-eventCtrl.php?msgCode=6');
         } else {
             // Si l'enregistrement s'est mal passé, on affiche à nouveau le formulaire de création avec un message d'erreur.
             $msgCode=$result;
@@ -102,14 +102,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
 } else {
     $event= Event::get($id);
-    // Si le patient n'existe pas, on redirige vers la liste complète avec un code erreur
+    // Si l'event n'existe pas, on redirige vers la liste complète avec un code erreur
     if($event){
         $id = $event->id;
         $title = $event->title;
         $date = $event->date;
         $description = $event->description;
     } else {
-        header('location: /controllers/list-eventCtrl.php?msgCode=3');
+        header('location: /controllers/list-eventCtrl.php?msgCode=11');
     }
     /*************************************************************/
 }

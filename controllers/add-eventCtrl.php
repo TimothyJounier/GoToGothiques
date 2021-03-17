@@ -18,7 +18,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
      $title = trim(filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING,FILTER_FLAG_NO_ENCODE_QUOTES));
 
      //On test si le champ n'est pas vide
-     var_dump($errorsArray);
      if(empty($title)){
          // On test la valeur
          $errorsArray['pseudo_error'] = 'Le champ n\'est pas rempli';
@@ -49,9 +48,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
      // DATE ET HEURE DE L'EVENT
     // On verifie l'existance et on nettoie
     $date = trim(filter_input(INPUT_POST, 'date', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES));
+    
 
 // ***************************************************************
-     // DATE ET HEURE DE L'EVENT
+     // DESCRIPTION DE L'EVENT
     // On verifie l'existance et on nettoie
     $description= trim(filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES));
 
@@ -81,14 +81,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 // ***************************************************************
 // Si il n'y a pas d'erreurs, on enregistre un nouvel event
-var_dump($errorsArray);
+
 if(empty($errorsArray)){
     $event = new Event();
     $event->setTitle($title);
     $event->setDate($date);
     $event->setDescription($description);
     $resultCreatedEvent = $event->create();
-    if($resultCreatedEvent===false){
+    if($resultCreatedEvent){
+        header('location: /controllers/list-eventCtrl.php?msgCode=9');
+    } else {
         $errorsArray['register_error'] = 'Enregistrement impossible (l\'evenement existe déjà ?)';
     }
     }
