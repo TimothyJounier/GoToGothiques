@@ -30,9 +30,7 @@
           <img class="card-img-top" src="/assets/img/background/steak-easy.jpg" alt="Card image cap">
           <div class="card-body">
             <h3>Steak Easy</h3>
-            <h5 class="card-title">Amiens - Grenoble</h5>
             <h5 class="card-title">jj/mm/aaaa 20:00</h5>
-            <h5 class="card-title">8 Rue de Metz l'Évêque, 80000 Amiens</h5>
             <p class="card-text">Le steak Easy diffuse en direct le match des Gothiques d'Amiens contre les Brûleurs de Loup de Grenoble, menu spécial pour l'évènement.</p>
             <a href="#" class="btn btn-danger">Inscription</a>
           </div>

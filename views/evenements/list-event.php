@@ -31,11 +31,7 @@ if(!empty($msgCode) || $msgCode = trim(filter_input(INPUT_GET, 'msgCode', FILTER
     <?php 
     $i=0;
     foreach($allEvent as $event) {
-      if($event->deleted_at == NULL){
-        $backgroundUser = 'backgroundUser';
-      } else {
-        $backgroundUser = 'backgroundSuspendUser';
-      }
+      if($event)
         $i++;
         ?>
         <tr class="<?= $backgroundUser ?>">
@@ -45,8 +41,7 @@ if(!empty($msgCode) || $msgCode = trim(filter_input(INPUT_GET, 'msgCode', FILTER
         <td><?=htmlentities($event->description)?></td>
         <td>
           <a href="/controllers/display-usersCtrl.php?id=<?=htmlentities($event->id)?>"><i class="far fa-edit"></i></a>
-          <a href="/controllers/achievementCtrl.php?id=<?=htmlentities($event->id)?>"><i class="fas fa-folder-minus"></i></a>
-          <a href="/controllers/delete-usersCtrl.php?id=<?=htmlentities($event->id)?>"><i class="fas fa-trash-alt"></i></a>
+          <a href="/controllers/delete-eventsCtrl.php?id=<?=htmlentities($event->id)?>"><i class="fas fa-trash-alt"></i></a>
         </td>
         </tr>
     <?php } ?>

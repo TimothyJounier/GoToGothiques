@@ -12,20 +12,11 @@
           <div class="form-group">
             <label class="control-label col-sm-2" for="fname">Titre</label>
             <div class="col-sm-10">   
-            <form action="POST">       
+            <form action="" method="POST">       
             <input type="text" class="form-control"  id="fname" name="fname" class="field <?= isset($errorsArray['name_error']) ? 'is-invalid' : ''?>" 
                 pattern="[A-Za-z-éèêëàâäôöûüç' ]+" 
                 title="Lettres majuscules et minuscules" 
                 value="<?= $name ?? ''?>" required>
-            </div>
-          </div>
-          
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="text">Equipes</label>
-            <div class="col-sm-10">
-            <input type="text" class="form-control" id="text"  name="text" class="field <?= isset($errorsArray['mail_error']) ? 'is-invalid' : ''?> "
-                title="Votre adresse mail n'est pas valide" 
-                value="<?= $mail ?? ''?>" required>
             </div>
           </div>
           <div class="form-group">
@@ -37,17 +28,9 @@
             </div>
           </div>
           <div class="form-group">
-            <label class="control-label col-sm-2" for="text">Adresse</label>
-            <div class="col-sm-10">
-            <input type="text" class="form-control" id="text"  name="text" class="field <?= isset($errorsArray['mail_error']) ? 'is-invalid' : ''?> "
-                title="Votre adresse mail n'est pas valide" 
-                value="<?= $mail ?? ''?>" required>
-            </div>
-          </div>
-          <div class="form-group">
             <label class="control-label col-sm-2" for="comment">Description</label>
             <div class="col-sm-10">
-            <textarea class="form-control" rows="3" id="comment" name="message"
+            <textarea class="form-control" rows="4" id="comment" name="message"
                 class="field"
                 required 
                 ><?= $message ?? ''?></textarea>
