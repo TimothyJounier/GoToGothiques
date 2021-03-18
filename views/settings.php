@@ -19,7 +19,7 @@
                   </div>
                   <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
                     <div class="text-center text-sm-left mb-2 mb-sm-0">
-                      <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">John</h4>
+                      <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">Bienvenue, <?=htmlentities($userSettings->pseudo)?></h4>
                       <div class="mt-2">
                         <!-- <button class="btn btn-danger" type="button">
                           <i class="fa fa-fw fa-camera"></i>
@@ -28,8 +28,17 @@
                       </div>
                     </div>
                     <div class="text-center text-sm-right">
-                      <span class="badge badge-danger">admin</span>
-                      <div class="text-muted"><small>Inscription  09 Dec 2017</small></div>
+                    <span class="badge badge-danger">
+                      <?php
+                      if($userSettings->id_roles == 2){
+                        echo 'Admin';
+                      } else {
+                        echo 'Membre';
+                      }
+                      
+                      ?>
+                    </span>
+                      <div class="text-muted"><small>Inscription faite le <?=htmlentities($userSettings->created_at)?></small></div>
                     </div>
                   </div>
                 </div>
@@ -42,7 +51,7 @@
                             <div class="col">
                               <div class="form-group">
                                 <label>Pseudo</label>
-                                <input class="form-control" type="text" name="username" placeholder="John">
+                                <input class="form-control" type="text" name="username" placeholder="<?=htmlentities($userSettings->pseudo)?>">
                               </div>
                             </div>
                           </div>
@@ -50,7 +59,7 @@
                             <div class="col">
                               <div class="form-group">
                                 <label>Email</label>
-                                <input class="form-control" type="text" placeholder="utilisateur@example.com">
+                                <input class="form-control" type="text" placeholder="<?=htmlentities($userSettings->email)?>">
                               </div>
                             </div>
                           </div>

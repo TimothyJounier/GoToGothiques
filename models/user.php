@@ -130,7 +130,6 @@ class User{
             $sql = 'SELECT * FROM `user` 
                     WHERE `id` = :id;';
             $sth = $pdo->prepare($sql);
-
             $sth->bindValue(':id',$id,PDO::PARAM_INT);
             $sth->execute();
             return($sth->fetch());
@@ -141,6 +140,28 @@ class User{
 
 
     }
+
+    public static function getUserSettings(){
+        
+        $pdo = Database::getInstance();
+
+        try{
+            $sql = 'SELECT * FROM `user` 
+                   ORDER BY `id`
+                    LIMIT 1;'; 
+            $sth = $pdo->prepare($sql);
+
+            // $sth->bindValue(':id',$id,PDO::PARAM_INT);
+            $sth->execute();
+            return($sth->fetch());
+        }
+        catch(PDOException $e){
+            return false;
+        }
+
+
+    }
+
 
      /**
      * Méthode qui permet de mettre à jour un utilisateur

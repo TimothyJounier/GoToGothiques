@@ -2,9 +2,6 @@
     <div class="container">
       <div class="row">
         <div class="text-img col-md-8 col-md-offset-2">
-          <!-- <h1>Bienvenue sur GoToGothique</h1> -->
-          <!-- <h5>WE ARE CRAFTING THE LAST DETAILS TO LAUNCH OUR SITE</h5>
-          <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h2> -->
         </div>
       </div>
       <!--/row-->
@@ -29,9 +26,11 @@
         <div class="card">
           <img class="card-img-top" src="/assets/img/background/steak-easy.jpg" alt="Card image cap">
           <div class="card-body">
-            <h3>Steak Easy</h3>
-            <h5 class="card-title">jj/mm/aaaa 20:00</h5>
-            <p class="card-text">Le steak Easy diffuse en direct le match des Gothiques d'Amiens contre les Brûleurs de Loup de Grenoble, menu spécial pour l'évènement.</p>
+  
+            <h3 hidden><?=htmlentities($eventHome->id)?></h3>
+            <h3><?=htmlentities($eventHome->title)?></h3>
+            <h5 class="card-title"><?=htmlentities($eventHome->date)?></h5>
+            <p class="card-text"><?=htmlentities($eventHome->description)?></p>
             <a href="#" class="btn btn-danger">Inscription</a>
           </div>
         </div>

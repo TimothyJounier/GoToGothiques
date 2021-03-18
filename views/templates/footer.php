@@ -10,7 +10,7 @@
         <!-- Grid column -->
         <div class="bloc col-md-5 mb-2">
             <h6 class="text-uppercase font-weight-bold">
-                <a href="#!">Condition d'utilisation</a>
+                <a href="#!">Conditions generales</a>
             </h6>
         </div>
         <!-- Grid column -->

@@ -108,11 +108,32 @@ class Event{
         $pdo = Database::getInstance();
 
         try{
-            $sql = 'SELECT * FROM `event` 
+            $sql = 'SELECT * FROM `event`
                     WHERE `id` = :id;';
             $sth = $pdo->prepare($sql);
 
             $sth->bindValue(':id',$id,PDO::PARAM_INT);
+            $sth->execute();
+            return($sth->fetch());
+        }
+        catch(PDOException $e){
+            return false;
+        }
+
+
+    }
+
+    public static function getEventHome(){
+        
+        $pdo = Database::getInstance();
+
+        try{
+            $sql = 'SELECT * FROM `event` 
+                    ORDER BY `id`
+                    LIMIT 1;';
+            $sth = $pdo->prepare($sql);
+
+            // $sth->bindValue(':id',$id,PDO::PARAM_INT);
             $sth->execute();
             return($sth->fetch());
         }

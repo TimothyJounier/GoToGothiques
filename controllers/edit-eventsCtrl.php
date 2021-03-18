@@ -28,27 +28,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
          $errorsArray['pseudo_error'] = 'Le champ n\'est pas rempli';
          }
    
-    
-
-// ***************************************************************
-
-// // Equipe
-//      // On verifie l'existance et on nettoie
-//      $id_team = trim(filter_input(INPUT_POST, 'team', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES));
-    
-     
-//      //On test si le champ n'est pas vide
-//      if(!empty($id_team)){
-//          // On test la valeur
-//          $testRegex = preg_match(REGEXP_STR_NO_NUMBER,$titre);
- 
-//          if($testRegex == false){
-//              $errorsArray['pseudo_error'] = 'Le pseudo n\'est pas valide';
-//          }
-//      }else{
-//          $errorsArray['pseudo_error'] = 'Le champ n\'est pas rempli';
-//      }
-
 // ***************************************************************
      // DATE ET HEURE DE L'EVENT
     // On verifie l'existance et on nettoie
@@ -58,29 +37,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
      // DATE ET HEURE DE L'EVENT
     // On verifie l'existance et on nettoie
     $description= trim(filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES));
-
-
-
-// ***************************************************************
-//     // Adresse
-//      // On verifie l'existance et on nettoie
-//      $adresse = trim(filter_input(INPUT_POST, 'adresse', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES));
-    
-     
-//      //On test si le champ n'est pas vide
-//      if(!empty($adresse)){
-//          // On test la valeur
-//          $testRegex = preg_match(REGEXP_ADRESSE,$adresse);
- 
-//          if($testRegex == false){
-//              $errorsArray['pseudo_error'] = 'Le pseudo n\'est pas valide';
-//          }
-//      }else{
-//          $errorsArray['pseudo_error'] = 'Le champ n\'est pas rempli';
-//      }
-
-//      // On nettoie le champ description
-//      $inputDescription = trim(filter_input(INPUT_POST, 'inputDescription', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES));
 
 
 // ***************************************************************
