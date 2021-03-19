@@ -284,14 +284,30 @@ class User{
         
     }
 
+/**
+     * Méthode qui permet à l'utilisateur de s'inscrire à un évènement
+     * 
+     * @return bool
+     */
+    public static function addUserEvent(){
 
-    // Suppression d'un user selon un id
-    // public function delete($id){
-    //     $sql = 'DELETE from `user` WHERE `id` = :id;';
-    //     $stmt = $this->_pdo->prepare($sql);
-    //     $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-    //     return ($stmt->execute());
-    // }
+        $pdo = Database::getInstance();
+        try{
+            $sql = 'SELECT `event`.`id`, `user`.`id` 
+                    FROM `event`
+                    INNER JOIN `user`
+                    ON `event`. ``;';
+
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
+            return($stmt->fetchAll());
+        }
+        catch(PDOException $e){
+            return false;
+        }
+        
+    }
+    
 
 }
 

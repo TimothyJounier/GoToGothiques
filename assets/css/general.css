@@ -30,7 +30,7 @@ body {
 
 .nav {
     background-color: #f8002f;
-    background-image: linear-gradient(326deg, #f8002f 0%, #000c14 74%);
+    background-image: linear-gradient(326deg, #9ea3a7 0%, #000c14 40%);
     text-align: center;
     width: 100%;
 }
@@ -40,7 +40,7 @@ body {
 .page-footer {
     flex-shrink: 0;
     width: 100%;
-    background-image: linear-gradient(326deg, #f8002f 0%, #000c14 74%);
+    background-image: linear-gradient(326deg, #9ea3a7 0%, #000c14 40%);
 }
 
 h6,
@@ -71,6 +71,10 @@ body {
   background: #fff;
   margin: 0;
   color: #5a5a5a;
+  
+}
+.cardHome{
+  box-shadow: 10px 10px 10px 0 rgba(51, 51, 51, 0.3);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -91,6 +95,7 @@ p {
 
 html, body {
   height: 100%;
+
 }
 
 .alignleft {
@@ -421,7 +426,7 @@ form input:focus {
   position: relative;
   z-index: 3;
   letter-spacing: 2px;
-  background-image: linear-gradient(326deg, #f8002f 0%, #000c14 74%);
+  background-image: linear-gradient(326deg, #9ea3a7 0%, #000c14 40%);
   font-family: "Playfair Display", serif;
   cursor: pointer;
 }
@@ -530,4 +535,3 @@ form input:focus {
   border-radius: 3px;
 }
 
-.

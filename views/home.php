@@ -23,7 +23,7 @@
       </div>
       <!--/col-md-6-->
       <div class="col-md-6">
-        <div class="card">
+        <div class="card cardHome">
           <img class="card-img-top" src="/assets/img/background/steak-easy.jpg" alt="Card image cap">
           <div class="card-body">
   
@@ -31,7 +31,9 @@
             <h3><?=htmlentities($eventHome->title)?></h3>
             <h5 class="card-title"><?=htmlentities($eventHome->date)?></h5>
             <p class="card-text"><?=htmlentities($eventHome->description)?></p>
-            <a href="#" class="btn btn-danger">Inscription</a>
+            <form action="" method="POST">
+            <button class="btn btn-danger" name="inscriptionEvent">Inscription</button>
+            </form>
           </div>
         </div>
       </div>

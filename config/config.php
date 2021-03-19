@@ -37,6 +37,8 @@ $displayMsg = array(
 
     '11' => ['type' => 'alert-danger', 'msg' => 'L\'utilisateur n\'a pas été trouvé'],
 
+    '12' => ['type' => 'alert-success', 'msg' => 'Vous êtes bien inscrit à l\'évènement'],
+
 
     // Mail
 

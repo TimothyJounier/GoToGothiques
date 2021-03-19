@@ -123,6 +123,7 @@ class Event{
 
     }
 
+    // Méthode qui permet de récupéré l'event sur la page home
     public static function getEventHome(){
         
         $pdo = Database::getInstance();
