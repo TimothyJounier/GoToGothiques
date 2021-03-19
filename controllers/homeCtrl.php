@@ -10,28 +10,40 @@ include(dirname(__FILE__) . '/../models/registrer.php');
 
 $eventHome = Event::getEventHome();
 
-
 /**************************/
 // Inscription Event 
 
 $errosArray = array();
 
-if(isset($_POST['inscriptionEvent'])){
-    $id_user = intval($_SESSION['id']);
-    $id_event = $addUserEvents->id;
+
+if(empty($errorsArray) ){    
+
+    $id_user = intval($_SESSION['id']); // récupére l'id user
+    
+    $id_event = $eventHome->id; // récupére l'id user
+    
+
+    $addUserEvents = new Register(); // Instance
+    $addUserEvents->setIdUser($id_user); //hydrate
+    $addUserEvents->setIdEvent($id_event);//hydrate
+    $resultAddUser = $addUserEvents->addUserEvent();
+    if($resultAddUser===true){
+        header('location: /controllers/homeCtrl.php?msgCode=12');
+    } else {
+        // Si l'enregistrement s'est mal passé, on affiche à nouveau le formulaire de création avec un message d'erreur.
+        $msgCode=$resultAddUser;
+    }
 }
 
-// if(empty($errorsArray)){
-    $addUserEvents = new Register();
-//     $addUserEvents->setIdEvent($id_event);
+
+// if(isset($_POST['inscriptionEvent'])){
+//     $id_user = intval($_SESSION['id']);
+//     $addUserEvents = new Register();
 //     $addUserEvents->setIdUser($id_user);
-//     $resultaddUserEvent = $addUserEvents->addUserEvent();
-//     if($resultaddUserEvent){
-//         header('location: /controllers/homeCtrl.php?msgCode=9');
-//     } else {
-//         $errorsArray['register_error'] = 'Enregistrement impossible (l\'evenement existe déjà ?)';
-//         }
-//     }
+//     $id_event = $addUserEvents->id;
+// }
+
+
 
 
 

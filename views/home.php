@@ -31,9 +31,7 @@
             <h3><?=htmlentities($eventHome->title)?></h3>
             <h5 class="card-title"><?=htmlentities($eventHome->date)?></h5>
             <p class="card-text"><?=htmlentities($eventHome->description)?></p>
-            <form action="" method="POST">
-            <button class="btn btn-danger" name="inscriptionEvent">Inscription</button>
-            </form>
+            <a href="/controllers/homeCtrl.php?id=<?=($eventHome->id)?>" class="btn btn-danger">Inscription</a>
           </div>
         </div>
       </div>
