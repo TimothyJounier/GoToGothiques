@@ -13,7 +13,7 @@
   <div class="container ptb">
     <div class="row">
       <div class="col-md-6">
-        <h2>Bienvenue sur le site des rendez-vous de Fan des Gothiques D'Amiens</h2>
+        <h2>Bienvenue sur le site GoToGothiques</h2>
         <BR/>
         <h4>LOREM IPSUM IS SIMPLY DUMMY TEXT.</h4>
 
@@ -31,7 +31,11 @@
             <h3><?=htmlentities($eventHome->title)?></h3>
             <h5 class="card-title"><?=htmlentities($eventHome->date)?></h5>
             <p class="card-text"><?=htmlentities($eventHome->description)?></p>
-            <a href="/controllers/homeCtrl.php?id=<?=($eventHome->id)?>" class="btn btn-danger">Inscription</a>
+            <?php 
+          if(isset($_SESSION['id'])){
+            echo '<a href="/controllers/homeCtrl.php?id=<?=($eventHome->id)?>" class="btn btn-danger">Inscription</a>';
+          }
+        ?>
           </div>
         </div>
       </div>
