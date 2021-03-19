@@ -5,6 +5,8 @@ include(dirname(__FILE__) . '/../config/sessionStart.php');
 
 include(dirname(__FILE__) . '/../models/event.php');
 include(dirname(__FILE__) . '/../models/registrer.php');
+require_once(dirname(__FILE__) . '/../config/config.php');
+
 
 
 

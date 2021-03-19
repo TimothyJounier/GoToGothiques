@@ -8,7 +8,7 @@ require_once(dirname(__FILE__) . '/../models/event.php');
 
 // Nettoyage de l'id passé en GET dans l'url
 $id = intval(trim(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT)));
-var_dump($event);
+
 /*************************************************************/
 
 // Appel à la méthode statique permettant de récupérer toutes les infos d'un event
